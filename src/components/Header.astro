@@ -1,0 +1,215 @@
+---
+interface Props {
+    current?: 'home' | 'about' | 'portfolio' | 'contact';
+}
+
+const { current = 'home' } = Astro.props;
+---
+
+<header class="w-full h-15 fixed backdrop-blur-md bg-white/107 font-mono">
+    <div class="mx-auto my-0 max-w-6xl h-full flex items-center justify-between">
+        <h1 class="font-black text-2xl flex items-center justify-start">
+            <a 
+                class="hover:bg-linear-to-r hover:from-[#667eea] hover:to-[#764ba2] hover:bg-clip-text hover:text-transparent" 
+                href="#home"
+            >
+                Johans1047
+            </a>
+        </h1>
+        <ul class="flex items-center gap-9 px-1 py-2 font-medium text-purple-300">
+            <li><a class="hover:outline-3 p-2" href="#home">Home</a></li>
+            <li><a class="hover:outline-3 p-2" href="#about">About</a></li>
+            <li><a class="hover:outline-3 p-2" href="#portfolio">Portfolio</a></li>
+            <li><a class="hover:outline-3 p-2" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+
+
+<!-- <header class="site-header bg-amber-400">
+    <div class="container bg-blue-500">
+        <a class="brand" href="/">Portfolio</a>
+
+        <button
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="hamburger"></span>
+        </button>
+
+        <nav id="primary-navigation" class="nav" role="navigation" aria-label="Primary">
+            <ul>
+                <li><a class:list-active={current === 'home'} href="/">Home</a></li>
+                <li><a class:list-active={current === 'about'} href="/about">About</a></li>
+                <li><a class:list-active={current === 'portfolio'} href="/portfolio">Portfolio</a></li>
+                <li><a class:list-active={current === 'contact'} href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <style>
+        :global(:root) {
+            --bg: #0f1724;
+            --muted: #94a3b8;
+            --accent: #7c3aed;
+            --glass: rgba(255,255,255,0.04);
+        }
+
+        .site-header {
+            backdrop-filter: blur(6px);
+            background: linear-gradient(180deg,var(--glass),transparent);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .brand {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.2px;
+        }
+
+        .nav {
+            display: none;
+        }
+
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav a {
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0.5rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover,
+        .nav a:focus {
+            color: white;
+            background: rgba(255,255,255,0.03);
+            outline: none;
+        }
+
+        .list-active {
+            color: white;
+            background: linear-gradient(90deg, rgba(124,58,237,0.14), rgba(124,58,237,0.06));
+            box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
+        }
+
+        .nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.03);
+            color: var(--muted);
+        }
+
+        .nav-toggle:focus {
+            outline: 2px solid rgba(124,58,237,0.25);
+            outline-offset: 2px;
+        }
+
+        .hamburger {
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            position: relative;
+            display: inline-block;
+        }
+        .hamburger::before,
+        .hamburger::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: currentColor;
+        }
+        .hamburger::before { top: -6px; }
+        .hamburger::after  { bottom: -6px; }
+
+        /* Desktop */
+        @media (min-width: 720px) {
+            .nav { display: block; }
+            .nav-toggle { display: none; }
+        }
+
+        /* Mobile expanded state */
+        .nav[data-open="true"] {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            background: var(--bg);
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .nav[data-open="true"] ul {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .nav[data-open="true"] a {
+            display: block;
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+    </style>
+
+    <script type="module">
+        (function () {
+            const btn = document.getElementById('nav-toggle');
+            const nav = document.getElementById('primary-navigation');
+
+            if (!btn || !nav) return;
+
+            const setOpen = (open) => {
+                btn.setAttribute('aria-expanded', String(open));
+                nav.dataset.open = open ? 'true' : 'false';
+            };
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                setOpen(!expanded);
+            });
+
+            // close on navigation (mobile)
+            nav.addEventListener('click', (e) => {
+                if (e.target.tagName.toLowerCase() === 'a') setOpen(false);
+            });
+
+            // close on escape
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        })();
+    </script>
+</header> -->

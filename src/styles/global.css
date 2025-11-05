@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* Configuración de fuentes personalizadas */
+@theme {
+  --font-sans: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Courier New', monospace;
+}
+
+/* Geist - Peso 200 (Extra Light) */
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap; /* The browser immediately displays text using a fallback font. */
+} 
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist - Peso 300 (Light) */
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist - Peso 400 (Regular) */
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist - Peso 500 (Medium) */
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist - Peso 700 (Bold) */
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist Mono - Peso 200 (Extra Light) */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap; /* The browser immediately displays text using a fallback font. */
+} 
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist Mono - Peso 300 (Light) */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist Mono - Peso 400 (Regular) */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist Mono - Peso 500 (Medium) */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist Mono - Peso 700 (Bold) */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* body {
+  font-family: 'Geist Mono', 'Courier New', monospace;
+} */
