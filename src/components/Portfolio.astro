@@ -1,0 +1,317 @@
+---
+import Project from "./Portfolio/Project.astro";
+import Stack from "./Portfolio/Stack.astro";
+import Certificate from "./Portfolio/Certificate.astro";
+import Education from "./Portfolio/Education.astro";
+import Testimonial from "./Portfolio/Testimonial.astro";
+---
+
+<section
+  id="portfolio"
+  class="max-w-7xl mx-auto px-4 py-9 sm:py-13 lg:py-22 font-mono min-h-fit"
+>
+  <!-- Header Section -->
+  <div class="mb-4 sm:mb-6">
+    <h1
+      class="text-3xl min-[480px]:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2"
+    >
+      <span class="block text-white">My</span>
+      <span class="gradient-shine">Portfolio</span>
+    </h1>
+    <p class="text-gray-300 text-base sm:text-lg max-w-2xl">
+      Explore my work, skills, education, and recommendations
+    </p>
+  </div>
+
+  <!-- Tabs Navigation -->
+  <div class="mb-6 sm:mb-8">
+    <!-- Mobile: Dropdown Select -->
+    <div class="min-[880px]:hidden mb-6">
+      <select
+        id="tab-select"
+        class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg text-base font-semibold focus:outline-none focus:ring-2 focus:ring-purple-500"
+      >
+        <option value="projects">Projects</option>
+        <option value="stack">Stack</option>
+        <option value="certificates">Certificates</option>
+        <option value="education">Education</option>
+        <option value="testimonials">Recomendations</option>
+      </select>
+    </div>
+
+    <!-- Desktop/Tablet: Buttons -->
+    <div
+      class="hidden min-[880px]:flex justify-start sm:justify-center gap-6 lg:gap-8 mb-6 sm:mb-8"
+    >
+      <button
+        class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap active"
+        data-tab="projects"
+      >
+        <span class="relative z-10">Projects</span>
+        <span
+          class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
+        ></span>
+      </button>
+
+      <button
+        class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
+        data-tab="stack"
+      >
+        <span class="relative z-10">Stack</span>
+        <span
+          class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
+        ></span>
+      </button>
+
+      <button
+        class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
+        data-tab="certificates"
+      >
+        <span class="relative z-10">Certificates</span>
+        <span
+          class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
+        ></span>
+      </button>
+
+      <button
+        class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
+        data-tab="education"
+      >
+        <span class="relative z-10">Education</span>
+        <span
+          class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
+        ></span>
+      </button>
+
+      <button
+        class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
+        data-tab="testimonials"
+      >
+        <span class="relative z-10">Recomendations</span>
+        <span
+          class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
+        ></span>
+      </button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="min-h-[300px] sm:min-h-[400px]">
+      <div id="projects" class="tab-panel">
+        <div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Project />
+          </div>
+        </div>
+      </div>
+
+      <div id="stack" class="tab-panel">
+        <div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Stack
+              title="Frontend"
+              technologies={[
+                "React",
+                "Vue.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Astro",
+              ]}
+            />
+            <Stack
+              title="Backend"
+              technologies={["Express", "Django", "FastAPI", "Flask"]}
+            />
+            <Stack title="Database" technologies={["PostgreSQL", "MySQL"]} />
+            <Stack
+              title="Tools & Others"
+              technologies={["Git", "Docker", "AWS", "Figma", "Postman"]}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="certificates" class="tab-panel">
+        <div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Certificate />
+          </div>
+        </div>
+      </div>
+
+      <div id="education" class="tab-panel">
+        <div>
+          <div class="max-w-3xl mx-auto space-y-6">
+            <Education
+              degree="Bachelor's Degree in Software Engineering"
+              institution="Technological University of Panama"
+              startDate="March 2021"
+              endDate="October 2025"
+              status="finished"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="testimonials" class="tab-panel">
+        <Testimonial />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estilos para los botones de tabs */
+  .tab-btn {
+    color: rgba(156, 163, 175, 1);
+  }
+
+  .tab-btn:hover {
+    color: #c4b5fd;
+  }
+
+  .tab-btn.active {
+    color: #a78bfa;
+  }
+
+  .tab-btn.active .tab-underline {
+    transform: scaleX(1);
+  }
+
+  .tab-btn:not(.active) .tab-underline {
+    transform: scaleX(0);
+  }
+
+  .tab-btn:not(.active):hover .tab-underline {
+    transform: scaleX(0.5);
+    opacity: 0.5;
+  }
+
+  /* Estilos para los paneles */
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .gradient-shine {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gradient-shine::before {
+    content: "Portfolio";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shine 7s linear infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* Estilos para el select en mobile */
+  #tab-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a78bfa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    transition: background-image 0.1s ease;
+  }
+
+  #tab-select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a78bfa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l7-7 7 7'%3E%3C/path%3E%3C/svg%3E");
+  }
+</style>
+
+<script>
+  // Función para cambiar de tab
+  function switchTab(tabId: string) {
+    // Remover active de todos los botones
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    // Remover active de todos los paneles
+    document.querySelectorAll(".tab-panel").forEach((panel) => {
+      panel.classList.remove("active");
+    });
+
+    // Activar el botón clickeado
+    const clickedBtn = document.querySelector(`[data-tab="${tabId}"]`);
+    clickedBtn?.classList.add("active");
+
+    // Activar el panel correspondiente
+    const targetPanel = document.getElementById(tabId);
+    targetPanel?.classList.add("active");
+
+    // Sincronizar el select en mobile
+    const select = document.getElementById("tab-select") as HTMLSelectElement;
+    if (select) {
+      select.value = tabId;
+    }
+  }
+
+  // Inicializar tabs
+  function initTabs() {
+    // Activar el primer tab por defecto
+    switchTab("projects");
+
+    // Event listeners para botones (desktop/tablet)
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const target = e.currentTarget as HTMLButtonElement;
+        const tabId = target.getAttribute("data-tab");
+
+        if (tabId) {
+          switchTab(tabId);
+        }
+      });
+    });
+
+    // Event listener para select (mobile)
+    const select = document.getElementById("tab-select") as HTMLSelectElement;
+    if (select) {
+      select.addEventListener("change", (e) => {
+        const target = e.target as HTMLSelectElement;
+        switchTab(target.value);
+      });
+    }
+  }
+
+  // Para Astro con View Transitions
+  document.addEventListener("astro:page-load", initTabs);
+
+  // Para navegación normal
+  document.addEventListener("DOMContentLoaded", initTabs);
+</script>

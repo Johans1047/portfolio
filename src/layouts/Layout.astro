@@ -1,22 +1,38 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body class="bg-linear-to-br from-slate-950 via-blue-950 to-black text-purple-400 bg-no-repeat bg-center bg-fixed bg-cover">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portfolio</title>
+  </head>
+  <body
+    class="text-purple-400 bg-linear-to-br from-slate-950 via-blue-950 to-black bg-no-repeat bg-center bg-fixed bg-cover"
+  >
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100vh;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
 </style>
+
+<script>
+  // Smooth scroll para todos los enlaces de ancla (header)
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      target?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  });
+</script>

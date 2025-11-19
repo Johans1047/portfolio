@@ -1,8 +1,13 @@
 ---
 import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
 import Header from '../components/Header.astro';
 import Home from "../components/Home.astro";
+import About from "../components/About.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,8 +16,12 @@ import Home from "../components/Home.astro";
 <!-- Es necesarip ajustar la responsividad del sitio web. el toggle de idiomas y ajustar el background -->
 
 <Layout>
-	<Header current="home" />
-	<Home />
-	<!-- <h1 class="font-sans text-4xl">ESTO ES GEIST</h1>
-	<h1 class="text-red-400 text-4xl font-mono"> ESTO ES GEIST</h1> -->
+	<Header />
+	<Container>
+		<Home />
+		<About />
+		<Portfolio />
+		<Contact />
+		<Footer />
+	</Container>
 </Layout>

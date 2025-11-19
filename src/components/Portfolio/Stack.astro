@@ -1,0 +1,18 @@
+---
+const { title, technologies = [] } = Astro.props;
+---
+
+<article
+  class="rounded-lg p-6 outline hover:bg-purple-800/10 hover:scale-105 transition-all duration-300"
+>
+  <h3 class="text-xl font-bold mb-4">{title}</h3>
+  <ul class="flex flex-col gap-3">
+    {
+      technologies.map((tech: string) => (
+        <li class="px-4 py-2 rounded-lg text-purple-300 bg-purple-900 border hover:border-transparent hover:text-white hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] hover:bg-purple-500/30 transition-all duration-300">
+          {tech}
+        </li>
+      ))
+    }
+  </ul>
+</article>

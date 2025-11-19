@@ -1,0 +1,35 @@
+---
+const { 
+  name = "Anonymous User", 
+  position = "Position not specified",
+  company = "Company",
+  testimonial = "Testimonial text not provided.",
+  icon = "👤",
+  rating = 5 // 1-5 stars
+} = Astro.props;
+
+// Generate array of stars based on rating
+const stars = Array(Math.min(Math.max(rating, 0), 5)).fill(0);
+---
+
+<article class="rounded-lg p-6 outline hover:bg-purple-800/10 hover:scale-105 transition-all duration-300">
+  <div class="flex items-center gap-4 mb-4">
+    <div
+      class="w-16 h-16 bg-linear-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-2xl"
+    >
+      {icon}
+    </div>
+    <div>
+      <h4 class="font-bold text-lg">{name}</h4>
+      <p class="text-gray-400 text-sm">{position} at {company}</p>
+    </div>
+  </div>
+  <p class="text-gray-300 italic">
+    "{testimonial}"
+  </p>
+  <div class="mt-4 flex items-center gap-1" aria-label={`Rating: ${rating} out of 5 stars`}>
+    {stars.map(() => (
+      <img src="/src/assets/svg/star.svg" alt="star icon" class="w-5 h-5" />
+    ))}
+  </div>
+</article>

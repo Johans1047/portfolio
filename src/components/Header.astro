@@ -1,215 +1,157 @@
 ---
-interface Props {
-    current?: 'home' | 'about' | 'portfolio' | 'contact';
-}
 
-const { current = 'home' } = Astro.props;
 ---
 
-<header class="w-full h-15 fixed backdrop-blur-md bg-white/107 font-mono">
-    <div class="mx-auto my-0 max-w-6xl h-full flex items-center justify-between">
-        <h1 class="font-black text-2xl flex items-center justify-start">
-            <a 
-                class="hover:bg-linear-to-r hover:from-[#667eea] hover:to-[#764ba2] hover:bg-clip-text hover:text-transparent" 
-                href="#home"
-            >
-                Johans1047
-            </a>
-        </h1>
-        <ul class="flex items-center gap-9 px-1 py-2 font-medium text-purple-300">
-            <li><a class="hover:outline-3 p-2" href="#home">Home</a></li>
-            <li><a class="hover:outline-3 p-2" href="#about">About</a></li>
-            <li><a class="hover:outline-3 p-2" href="#portfolio">Portfolio</a></li>
-            <li><a class="hover:outline-3 p-2" href="#contact">Contact</a></li>
-        </ul>
+<header class="w-full fixed h-15 backdrop-blur-md font-mono z-10">
+  <div class="h-full max-w-[80%] mx-auto flex items-center justify-between">
+    <h2
+      class="font-black text-lg lg:text-xl flex items-center justify-start basis-44 lg:basis-48"
+    >
+      <a
+        class="hover:bg-linear-to-r hover:from-[#667eea] hover:to-[#764ba2] hover:bg-clip-text hover:text-transparent py-2"
+        href="#home"
+      >
+        Jonathan Salazar
+      </a>
+    </h2>
+    <div class="md:hidden">
+      <button id="sidebar-icon" aria-label="Open navigation menu">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+    <ul
+      class="hidden md:flex items-center gap-6 lg:gap-9 px-1 py-2 font-medium text-sm lg:text-base"
+    >
+      <li><a class="nav-link p-2" href="#home">Home</a></li>
+      <li><a class="nav-link p-2" href="#about">About</a></li>
+      <li><a class="nav-link p-2" href="#portfolio">Portfolio</a></li>
+      <li><a class="nav-link p-2" href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </header>
 
+<div
+  id="sidebar"
+  role="navigation"
+  class="font-mono fixed top-0 right-0 w-64 h-full bg-linear-to-br from-blue-950 to-slate-950 border-l border-l-slate-800 backdrop-blur-md transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+>
+  <div class="py-6">
+    <button
+      id="close-sidebar"
+      aria-label="Close navigation menu"
+      class="mb-8 pl-6"
+    >
+      <svg
+        class="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <ul class="flex flex-col gap-3 font-medium">
+      <li>
+        <a
+          class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
+          href="#home">Home</a>
+      </li>
+      <li>
+        <a
+          class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
+          href="#about">About</a>
+      </li>
+      <li>
+        <a
+          class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
+          href="#portfolio">Portfolio</a>
+      </li>
+      <li>
+        <a
+          class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
+          href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
+<script>
+  const sidebarIcon = document.getElementById("sidebar-icon");
+  const sidebar = document.getElementById("sidebar");
+  const closeSidebar = document.getElementById("close-sidebar");
 
-<!-- <header class="site-header bg-amber-400">
-    <div class="container bg-blue-500">
-        <a class="brand" href="/">Portfolio</a>
+  // Abrir sidebar
+  sidebarIcon?.addEventListener("click", () => {
+    sidebar?.classList.remove("translate-x-full");
+  });
 
-        <button
-            id="nav-toggle"
-            class="nav-toggle"
-            aria-controls="primary-navigation"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
-            <span class="hamburger"></span>
-        </button>
+  // Cerrar sidebar
+  closeSidebar?.addEventListener("click", () => {
+    sidebar?.classList.add("translate-x-full");
+  });
 
-        <nav id="primary-navigation" class="nav" role="navigation" aria-label="Primary">
-            <ul>
-                <li><a class:list-active={current === 'home'} href="/">Home</a></li>
-                <li><a class:list-active={current === 'about'} href="/about">About</a></li>
-                <li><a class:list-active={current === 'portfolio'} href="/portfolio">Portfolio</a></li>
-                <li><a class:list-active={current === 'contact'} href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+  // Cerrar al hacer click en los enlaces
+  const sidebarLinks = sidebar?.querySelectorAll("a");
+  sidebarLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      sidebar?.classList.add("translate-x-full");
+    });
+  });
 
-    <style>
-        :global(:root) {
-            --bg: #0f1724;
-            --muted: #94a3b8;
-            --accent: #7c3aed;
-            --glass: rgba(255,255,255,0.04);
-        }
+  // Cerrar al hacer click fuera del sidebar
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (!sidebar?.contains(target) && !sidebarIcon?.contains(target)) {
+      sidebar?.classList.add("translate-x-full");
+    }
+  });
+</script>
 
-        .site-header {
-            backdrop-filter: blur(6px);
-            background: linear-gradient(180deg,var(--glass),transparent);
-            position: sticky;
-            top: 0;
-            z-index: 40;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
+<style>
+  .nav-link {
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0.6rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            justify-content: space-between;
-        }
+  /* Efecto de outline que se rellena en sentido horario */
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background:
+      linear-gradient(0deg, #667eea 0%, #764ba2 100%) border-box,
+      linear-gradient(0deg, #667eea 0%, #764ba2 100%) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+    transition: clip-path 0.6s ease;
+    pointer-events: none;
+  }
 
-        .brand {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: 0.2px;
-        }
-
-        .nav {
-            display: none;
-        }
-
-        .nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .nav a {
-            color: var(--muted);
-            text-decoration: none;
-            padding: 0.5rem 0.7rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-        }
-
-        .nav a:hover,
-        .nav a:focus {
-            color: white;
-            background: rgba(255,255,255,0.03);
-            outline: none;
-        }
-
-        .list-active {
-            color: white;
-            background: linear-gradient(90deg, rgba(124,58,237,0.14), rgba(124,58,237,0.06));
-            box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
-        }
-
-        .nav-toggle {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.35rem;
-            border-radius: 8px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.03);
-            color: var(--muted);
-        }
-
-        .nav-toggle:focus {
-            outline: 2px solid rgba(124,58,237,0.25);
-            outline-offset: 2px;
-        }
-
-        .hamburger {
-            width: 20px;
-            height: 2px;
-            background: currentColor;
-            position: relative;
-            display: inline-block;
-        }
-        .hamburger::before,
-        .hamburger::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: currentColor;
-        }
-        .hamburger::before { top: -6px; }
-        .hamburger::after  { bottom: -6px; }
-
-        /* Desktop */
-        @media (min-width: 720px) {
-            .nav { display: block; }
-            .nav-toggle { display: none; }
-        }
-
-        /* Mobile expanded state */
-        .nav[data-open="true"] {
-            display: block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100%;
-            background: var(--bg);
-            border-top: 1px solid rgba(255,255,255,0.03);
-        }
-
-        .nav[data-open="true"] ul {
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .nav[data-open="true"] a {
-            display: block;
-            padding: 0.9rem 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.02);
-        }
-    </style>
-
-    <script type="module">
-        (function () {
-            const btn = document.getElementById('nav-toggle');
-            const nav = document.getElementById('primary-navigation');
-
-            if (!btn || !nav) return;
-
-            const setOpen = (open) => {
-                btn.setAttribute('aria-expanded', String(open));
-                nav.dataset.open = open ? 'true' : 'false';
-            };
-
-            btn.addEventListener('click', () => {
-                const expanded = btn.getAttribute('aria-expanded') === 'true';
-                setOpen(!expanded);
-            });
-
-            // close on navigation (mobile)
-            nav.addEventListener('click', (e) => {
-                if (e.target.tagName.toLowerCase() === 'a') setOpen(false);
-            });
-
-            // close on escape
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') setOpen(false);
-            });
-        })();
-    </script>
-</header> -->
+  .nav-link:hover::before {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+</style>
