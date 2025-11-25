@@ -92,7 +92,7 @@ const shineText = t("about.title.line2");
           </a>
           <a
             href="#contact"
-            class="px-6 py-3 border border-purple-500 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
+            class="px-6 max-[415px]:pt-6 max-[415px]:pb-3 min-[416px]:py-3 border border-purple-500 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
           >
             {t("about.button.contact")}
           </a>
@@ -138,7 +138,7 @@ const shineText = t("about.title.line2");
               >
             </div>
 
-            <div class="mt-8 code-line caret" style="animation-delay: 2.5s;">
+            <div class="mt-8 code-line caret max-[390px]:hidden" style="animation-delay: 2.5s;">
               <span class="text-white">▊</span>
             </div>
           </div>
@@ -154,7 +154,7 @@ const shineText = t("about.title.line2");
         class="relative flex items-end justify-start h-48 rounded-2xl overflow-visible"
       >
         <div
-          class="stat-card h-40 w-40 rounded-2xl rotate-[-27deg] absolute top-8 left-6 flex items-center justify-center shadow-2xl"
+          class="stat-card h-35 w-35 sm:h-40 sm:w-40 rounded-2xl rotate-[-27deg] absolute top-8 left-6 flex items-center justify-center shadow-2xl"
         >
           <div class="rotate-27 text-center">
             <div class="text-5xl font-bold stat-number mb-1 float-animation">
@@ -162,11 +162,11 @@ const shineText = t("about.title.line2");
             </div>
           </div>
         </div>
-        <div class="pl-55 pb-6 w-full">
+        <div class="pl-50 sm:pl-55 pb-6 w-full">
           <h3 class="text-xl font-bold text-white mb-1">
             {t("about.stats.years")}
           </h3>
-          <p class="text-purple-300 text-sm">{t("about.stats.experience")}</p>
+          <p class="text-purple-300 text-sm whitespace-nowrap">{t("about.stats.experience")}</p>
         </div>
       </div>
 
@@ -174,7 +174,7 @@ const shineText = t("about.title.line2");
         class="relative flex items-end justify-start h-48 rounded-2xl overflow-visible"
       >
         <div
-          class="stat-card h-40 w-40 rounded-2xl rotate-[-27deg] absolute top-8 left-6 flex items-center justify-center shadow-2xl"
+          class="stat-card h-35 w-35 sm:h-40 sm:w-40 rounded-2xl rotate-[-27deg] absolute top-8 left-6 flex items-center justify-center shadow-2xl"
           style="animation-delay: 0.1s"
         >
           <div class="rotate-27 text-center">
@@ -183,11 +183,11 @@ const shineText = t("about.title.line2");
             </div>
           </div>
         </div>
-        <div class="pl-55 pb-6 w-full">
+        <div class="pl-50 sm:pl-55 pb-6 w-full">
           <h3 class="text-xl font-bold text-white mb-1">
             {t("about.stats.projects")}
           </h3>
-          <p class="text-purple-300 text-sm">{t("about.stats.completed")}</p>
+          <p class="text-purple-300 text-sm whitespace-nowrap">{t("about.stats.completed")}</p>
         </div>
       </div>
 
@@ -195,7 +195,7 @@ const shineText = t("about.title.line2");
         class="relative flex items-end justify-start h-48 rounded-2xl overflow-visible"
       >
         <div
-          class="stat-card h-40 w-40 rounded-2xl rotate-[-27deg] absolute top-8 left-6 flex items-center justify-center shadow-2xl"
+          class="stat-card h-35 w-35 sm:h-40 sm:w-40 rounded-2xl rotate-[-27deg] absolute top-8 left-6 flex items-center justify-center shadow-2xl"
         >
           <div class="rotate-27 text-center">
             <div class="text-5xl font-bold stat-number mb-1 float-animation">
@@ -203,11 +203,11 @@ const shineText = t("about.title.line2");
             </div>
           </div>
         </div>
-        <div class="pl-55 pb-6 w-full">
+        <div class="pl-50 sm:pl-55 pb-6 w-full">
           <h3 class="text-xl font-bold text-white mb-1">
             {t("about.stats.commits")}
           </h3>
-          <p class="text-purple-300 text-sm">{t("about.stats.thisyear")}</p>
+          <p class="text-purple-300 text-sm whitespace-nowrap">{t("about.stats.thisyear")}</p>
         </div>
       </div>
     </div>

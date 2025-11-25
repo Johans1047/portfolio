@@ -8,7 +8,7 @@
     <title>Portfolio</title>
   </head>
   <body
-    class="text-purple-400 bg-linear-to-br from-slate-950 via-blue-950 to-black bg-no-repeat bg-center bg-fixed bg-cover"
+    class="text-purple-400"
   >
     <slot />
   </body>
@@ -20,6 +20,21 @@
     margin: 0;
     width: 100%;
     min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom right,
+      oklch(12.9% 0.042 264.695),
+      oklch(28.2% 0.091 267.935),
+      oklch(0 0 0)
+    );
+    background-size: cover;
+    pointer-events: none;
   }
 </style>
 <script>

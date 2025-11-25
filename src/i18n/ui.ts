@@ -49,7 +49,7 @@ export const ui = {
     
     // Stats
     'about.stats.years': 'Years',
-    'about.stats.experience': 'Experience',
+    'about.stats.experience': 'Of experience',
     'about.stats.projects': 'Projects',
     'about.stats.completed': 'Completed',
     'about.stats.commits': 'Commits',
@@ -171,7 +171,7 @@ export const ui = {
     
     // Estadísticas
     'about.stats.years': 'Años',
-    'about.stats.experience': 'Experiencia',
+    'about.stats.experience': 'De experiencia',
     'about.stats.projects': 'Proyectos',
     'about.stats.completed': 'Completados',
     'about.stats.commits': 'Commits',
