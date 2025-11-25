@@ -4,8 +4,8 @@ import Stack from "./Portfolio/Stack.astro";
 import Certificate from "./Portfolio/Certificate.astro";
 import Education from "./Portfolio/Education.astro";
 import Testimonial from "./Portfolio/Testimonial.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { projects } from "../i18n/projects";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { projects } from "@i18n/projects";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

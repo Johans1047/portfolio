@@ -1,5 +1,7 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { Image } from 'astro:assets';
+import appImage from "@assets/img/app-development.png";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -54,11 +56,12 @@ const shineText = t('hero.title.line2');
     class="hidden lg:col-start-3 lg:row-span-2 lg:flex items-center justify-center"
     aria-labelledby="image-caption"
   >
-    <img
+    <!-- <img
       class="w-65"
       src="/src/assets/img/app-development.png"
       alt="Illustration of app development process"
-    />
+    /> -->
+    <Image src={appImage} alt="Illustration of app development process" width={260} />
     <figcaption id="image-caption" class="sr-only">
       {t('hero.image.alt')}
     </figcaption>
