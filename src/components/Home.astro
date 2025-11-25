@@ -1,3 +1,11 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const shineText = t('hero.title.line2');
+---
+
 <section
   id="home"
   aria-labelledby="hero-heading"
@@ -10,19 +18,17 @@
       id="hero-heading"
       class="text-4xl min-[480px]:text-5xl lg:text-6xl xl:text-7xl font-bold w-fit"
     >
-      <span class="block">Software</span>
-      <span class="text-purple-400 gradient-shine">Developer</span>
+      <span class="block">{t('hero.title.line1')}</span>
+      <span class="text-purple-400 gradient-shine">{t('hero.title.line2')}</span>
     </h2>
 
     <p class="text-md xl:text-lg text-gray-300 lg:w-7/10">
-      Eager to build innovative, production-ready applications.
-      My skills span full-stack development and emerging AI technologies — 
-      crafting intuitive user experiences powered by solid backend architecture.
+      {t('hero.description')}
     </p>
 
     <div class="text-purple-400 flex flex-col gap-4">
       <p class="h-fit text-purple-400 text-lg font-bold">
-        Let's connect and create something amazing together!
+        {t('hero.cta.connect')}
       </p>
 
       <nav aria-label="Hero section buttons" class="flex items-center gap-10">
@@ -31,14 +37,14 @@
           href="#contact"
           aria-label="Contact me"
         >
-          Get in Touch
+          {t('hero.button.contact')}
         </a>
         <a
           class="px-2 min-[480px]:px-6 sm:px-8 py-3 sm:text-lg font-semibold outline-2 button-3d overflow-hidden"
           href="#"
           aria-label="Download my CV in PDF format"
         >
-          Download CV
+          {t('hero.button.cv')}
         </a>
       </nav>
     </div>
@@ -50,23 +56,23 @@
   >
     <img
       class="w-65"
-      src="src/assets/img/app-development.png"
+      src="/src/assets/img/app-development.png"
       alt="Illustration of app development process"
     />
     <figcaption id="image-caption" class="sr-only">
-      Illustration of app development process
+      {t('hero.image.alt')}
     </figcaption>
   </figure>
 </section>
 
-<style>
+<style define:vars={{ shineText: `"${shineText}"` }}>
   .gradient-shine {
     position: relative;
     display: inline-block;
   }
 
   .gradient-shine::before {
-    content: "Developer";
+    content: var(--shineText);
     position: absolute;
     top: 0;
     left: 0;

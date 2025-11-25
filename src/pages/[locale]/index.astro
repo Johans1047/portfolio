@@ -1,0 +1,30 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import Container from '../../components/Container.astro';
+import Header from '../../components/Header.astro';
+import Home from "../../components/Home.astro";
+import About from "../../components/About.astro";
+import Portfolio from "../../components/Portfolio.astro";
+import Contact from "../../components/Contact.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'es' } },
+  ];
+}
+---
+
+<Layout>
+	<Header />
+	<Container>
+		<Home />
+		<About />
+		<Portfolio />
+		<Contact />
+		<Footer />
+	</Container>
+</Layout>

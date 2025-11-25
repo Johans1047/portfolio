@@ -1,10 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
 interface Props {
   degree?: string;
   institution?: string;
   startDate?: string;
   endDate?: string;
-  status?: "finished" | "in-progress";
+  status?: "finished" | "pending";
   icon?: string;
 }
 
@@ -13,18 +15,21 @@ const {
   institution = "Unknown Institution", 
   startDate = "Start date", 
   endDate = "End date",
-  status = "finished", // "finished" or "in-progress"
+  status = "finished", // "finished" or "pending"
   icon = "🎓"
 }: Props = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const statusStyles = {
   finished: {
     container: "text-purple-300 bg-linear-to-r from-purple-800/40 to-purple-600/40 border-purple-500/40 hover:shadow-[0_0_10px_rgba(168,85,247,0.6)]",
-    label: "Finished"
+    label: t('edu.status.finished.label')
   },
-  "in-progress": {
+  "pending": {
     container: "text-gray-300 bg-linear-to-r from-gray-700/40 to-gray-500/40 border-gray-500/40 hover:shadow-[0_0_10px_rgba(234,179,8,0.6)]",
-    label: "In Progress"
+    label: t('edu.status.pending.label')
   }
 };
 

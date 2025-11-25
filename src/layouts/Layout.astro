@@ -22,13 +22,19 @@
     min-height: 100vh;
   }
 </style>
-
 <script>
+  const lang = new URL(window.location.href).pathname.split("/")[1] || "es";
+
   // Smooth scroll para todos los enlaces de ancla (header)
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll(`a[href^="/${lang}#"]`).forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+
+      // Extraer solo el hash (parte después del #)
+      const target = document.getElementById(
+        this.getAttribute("href").split("#")[1]
+      );
+
       target?.scrollIntoView({
         behavior: "smooth",
         block: "start",

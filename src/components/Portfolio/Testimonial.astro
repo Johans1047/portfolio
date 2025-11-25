@@ -1,9 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const { 
-  name = "Anonymous User", 
-  position = "Position not specified",
-  company = "Company",
-  testimonial = "Testimonial text not provided.",
+  name = t('test.name'), 
+  position = t('test.position'),
+  company = t('test.company'),
+  testimonial = t('test.testimonial'),
   icon = "👤",
   rating = 5 // 1-5 stars
 } = Astro.props;
@@ -25,7 +30,7 @@ const stars = Array(Math.min(Math.max(rating, 0), 5)).fill(0);
     </div>
   </div>
   <p class="text-gray-300 italic">
-    "{testimonial}"
+    {testimonial}
   </p>
   <div class="mt-4 flex items-center gap-1" aria-label={`Rating: ${rating} out of 5 stars`}>
     {stars.map(() => (

@@ -4,6 +4,12 @@ import Stack from "./Portfolio/Stack.astro";
 import Certificate from "./Portfolio/Certificate.astro";
 import Education from "./Portfolio/Education.astro";
 import Testimonial from "./Portfolio/Testimonial.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { projects } from "../i18n/projects";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const shineText = t('portfolio.title.line2');
 ---
 
 <section
@@ -15,11 +21,11 @@ import Testimonial from "./Portfolio/Testimonial.astro";
     <h1
       class="text-3xl min-[480px]:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2"
     >
-      <span class="block text-white">My</span>
-      <span class="gradient-shine">Portfolio</span>
+      <span class="block text-white">{t('portfolio.title.line1')}</span>
+      <span class="gradient-shine">{t('portfolio.title.line2')}</span>
     </h1>
     <p class="text-gray-300 text-base sm:text-lg max-w-2xl">
-      Explore my work, skills, education, and recommendations
+      {t('portfolio.subtitle')}
     </p>
   </div>
 
@@ -31,11 +37,11 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         id="tab-select"
         class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg text-base font-semibold focus:outline-none focus:ring-2 focus:ring-purple-500"
       >
-        <option value="projects">Projects</option>
-        <option value="stack">Stack</option>
-        <option value="certificates">Certificates</option>
-        <option value="education">Education</option>
-        <option value="testimonials">Recomendations</option>
+        <option value="projects">{t('portfolio.tabs.projects')}</option>
+        <option value="stack">{t('portfolio.tabs.stack')}</option>
+        <option value="certificates">{t('portfolio.tabs.certificates')}</option>
+        <option value="education">{t('portfolio.tabs.education')}</option>
+        <option value="testimonials">{t('portfolio.tabs.testimonials')}</option>
       </select>
     </div>
 
@@ -47,7 +53,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap active"
         data-tab="projects"
       >
-        <span class="relative z-10">Projects</span>
+        <span class="relative z-10">{t('portfolio.tabs.projects')}</span>
         <span
           class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
         ></span>
@@ -57,7 +63,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
         data-tab="stack"
       >
-        <span class="relative z-10">Stack</span>
+        <span class="relative z-10">{t('portfolio.tabs.stack')}</span>
         <span
           class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
         ></span>
@@ -67,7 +73,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
         data-tab="certificates"
       >
-        <span class="relative z-10">Certificates</span>
+        <span class="relative z-10">{t('portfolio.tabs.certificates')}</span>
         <span
           class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
         ></span>
@@ -77,7 +83,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
         data-tab="education"
       >
-        <span class="relative z-10">Education</span>
+        <span class="relative z-10">{t('portfolio.tabs.education')}</span>
         <span
           class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
         ></span>
@@ -87,7 +93,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         class="tab-btn group relative px-4 py-3 text-base lg:text-lg font-semibold transition-all duration-300 whitespace-nowrap"
         data-tab="testimonials"
       >
-        <span class="relative z-10">Recomendations</span>
+        <span class="relative z-10">{t('portfolio.tabs.testimonials')}</span>
         <span
           class="tab-underline absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-600 to-pink-600 transition-transform duration-300"
         ></span>
@@ -99,7 +105,20 @@ import Testimonial from "./Portfolio/Testimonial.astro";
       <div id="projects" class="tab-panel">
         <div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Project />
+            {
+              projects.map((project) => (
+                <Project
+                  title={t(`project.${project.id}.name` as any)}
+                  description={t(`project.${project.id}.description` as any)}
+                  tools={project.tools}
+                  demoLink={project.demo}
+                  githubLink={project.github}
+                  lang={lang}
+                  image={project.image}
+                />
+              ))
+            }
+
           </div>
         </div>
       </div>
@@ -108,7 +127,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         <div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Stack
-              title="Frontend"
+              title={t('stack.frontend')}
               technologies={[
                 "React",
                 "Vue.js",
@@ -118,12 +137,15 @@ import Testimonial from "./Portfolio/Testimonial.astro";
               ]}
             />
             <Stack
-              title="Backend"
+              title={t('stack.backend')}
               technologies={["Express", "Django", "FastAPI", "Flask"]}
             />
-            <Stack title="Database" technologies={["PostgreSQL", "MySQL"]} />
+            <Stack 
+              title={t('stack.database')}
+              technologies={["PostgreSQL", "MySQL"]} 
+            />
             <Stack
-              title="Tools & Others"
+              title={t('stack.tools')}
               technologies={["Git", "Docker", "AWS", "Figma", "Postman"]}
             />
           </div>
@@ -142,24 +164,28 @@ import Testimonial from "./Portfolio/Testimonial.astro";
         <div>
           <div class="max-w-3xl mx-auto space-y-6">
             <Education
-              degree="Bachelor's Degree in Software Engineering"
-              institution="Technological University of Panama"
-              startDate="March 2021"
-              endDate="October 2025"
-              status="finished"
+              degree={t('edu.degree')}
+              institution={t('edu.institution')}
+              startDate={t('edu.date.start')}
+              endDate={t('edu.date.end')}
+              status={t('edu.status.finished')}
             />
           </div>
         </div>
       </div>
 
       <div id="testimonials" class="tab-panel">
-        <Testimonial />
+        <div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Testimonial />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<style>
+<style define:vars={{ shineText: `"${shineText}"` }}>
   /* Estilos para los botones de tabs */
   .tab-btn {
     color: rgba(156, 163, 175, 1);
@@ -213,7 +239,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
   }
 
   .gradient-shine::before {
-    content: "Portfolio";
+    content: var(--shineText);
     position: absolute;
     top: 0;
     left: 0;

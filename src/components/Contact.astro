@@ -1,13 +1,21 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section
   id="contact"
   aria-labelledby="hero-heading"
   class="min-h-screen flex flex-col justify-center items-center py-20 font-mono"
 >
   <div id="contact-heading" class="max-w-3xl w-full text-center mb-12">
-    <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+    <h2 class="text-4xl font-bold mb-4">
+      {t('contact.title')}
+    </h2>
     <p class="text-gray-300 text-md sm:text-lg">
-      Got a question, a project idea, or just want to say hi? I’d love to hear
-      from you — let’s build something great together.
+      {t('contact.subtitle')}
     </p>
   </div>
 
@@ -84,7 +92,7 @@
 
   <div class="mt-6 sm:mt-12 text-gray-400 text-sm">
     <p class="text-center">
-      or reach me directly at
+      {t('contact.direct')}
       <a
         href="mailto:jonathan.salazar1047@gmail.com"
         class="text-purple-400 hover:text-purple-300"

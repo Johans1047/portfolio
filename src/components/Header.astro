@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="w-full fixed h-15 backdrop-blur-md font-mono z-10">
@@ -9,7 +12,7 @@
     >
       <a
         class="hover:bg-linear-to-r hover:from-[#667eea] hover:to-[#764ba2] hover:bg-clip-text hover:text-transparent py-2"
-        href="#home"
+        href={`/${lang}#home`}
       >
         Jonathan Salazar
       </a>
@@ -31,17 +34,52 @@
         </svg>
       </button>
     </div>
+
+    <!-- Desktop Navigation -->
     <ul
       class="hidden md:flex items-center gap-6 lg:gap-9 px-1 py-2 font-medium text-sm lg:text-base"
     >
-      <li><a class="nav-link p-2" href="#home">Home</a></li>
-      <li><a class="nav-link p-2" href="#about">About</a></li>
-      <li><a class="nav-link p-2" href="#portfolio">Portfolio</a></li>
-      <li><a class="nav-link p-2" href="#contact">Contact</a></li>
+      <li>
+        <a class="nav-link p-2" href={`/${lang}#home`}>{t("nav.home")}</a>
+      </li>
+      <li>
+        <a class="nav-link p-2" href={`/${lang}#about`}>{t("nav.about")}</a>
+      </li>
+      <li>
+        <a class="nav-link p-2" href={`/${lang}#portfolio`}
+          >{t("nav.portfolio")}</a>
+      </li>
+      <li>
+        <a class="nav-link p-2" href={`/${lang}#contact`}>{t("nav.contact")}</a>
+      </li>
     </ul>
+
+    <!-- Language Switcher (Desktop) -->
+    <div class="hidden md:flex gap-2 items-center ml-4">
+      <a
+        href={`/es${Astro.url.hash || "#home"}`}
+        class:list={[
+          "px-2 py-1 rounded hover:bg-purple-500/20 transition-colors",
+          lang === "es" && "font-bold text-purple-400 bg-purple-500/10",
+        ]}
+      >
+        ES
+      </a>
+      <span class="text-gray-500">|</span>
+      <a
+        href={`/en${Astro.url.hash || "#home"}`}
+        class:list={[
+          "px-2 py-1 rounded hover:bg-purple-500/20 transition-colors",
+          lang === "en" && "font-bold text-purple-400 bg-purple-500/10",
+        ]}
+      >
+        EN
+      </a>
+    </div>
   </div>
 </header>
 
+<!-- Mobile Sidebar -->
 <div
   id="sidebar"
   role="navigation"
@@ -67,28 +105,59 @@
           d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-    <ul class="flex flex-col gap-3 font-medium">
+
+    <!-- Mobile Navigation Links -->
+    <ul class="flex flex-col gap-3 font-medium mb-6">
       <li>
         <a
           class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
-          href="#home">Home</a>
+          href={`/${lang}#home`}>{t("nav.home")}</a
+        >
       </li>
       <li>
         <a
           class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
-          href="#about">About</a>
+          href={`/${lang}#about`}>{t("nav.about")}</a
+        >
       </li>
       <li>
         <a
           class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
-          href="#portfolio">Portfolio</a>
+          href={`/${lang}#portfolio`}>{t("nav.portfolio")}</a
+        >
       </li>
       <li>
         <a
           class="hover:bg-white/10 focus:bg-white/15 py-2 pl-8 block w-full"
-          href="#contact">Contact</a>
+          href={`/${lang}#contact`}>{t("nav.contact")}</a
+        >
       </li>
     </ul>
+
+    <!-- Language Switcher (Mobile) -->
+    <div class="border-t border-gray-700 pt-4 px-8">
+      <p class="text-xs text-gray-400 mb-3">Idioma / Language</p>
+      <div class="flex gap-3">
+        <a
+          href={`/es${Astro.url.hash || "#home"}`}
+          class:list={[
+            "px-3 py-2 rounded text-sm hover:bg-white/10 transition-colors flex-1 text-center",
+            lang === "es" && "font-bold bg-purple-500/20 text-purple-300",
+          ]}
+        >
+          Español
+        </a>
+        <a
+          href={`/en${Astro.url.hash || "#home"}`}
+          class:list={[
+            "px-3 py-2 rounded text-sm hover:bg-white/10 transition-colors flex-1 text-center",
+            lang === "en" && "font-bold bg-purple-500/20 text-purple-300",
+          ]}
+        >
+          English
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
