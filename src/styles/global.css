@@ -10,7 +10,7 @@
 /* Geist - Peso 200 (Extra Light) */
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-ExtraLight.woff2') format('woff2');
+  src: url('/fonts/Geist-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-ExtraLightItalic.woff2') format('woff2');
+  src: url('/fonts/Geist-ExtraLightItalic.woff2') format('woff2');
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -28,7 +28,7 @@
 /* Geist - Peso 300 (Light) */
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-Light.woff2') format('woff2');
+  src: url('/fonts/Geist-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-LightItalic.woff2') format('woff2');
+  src: url('/fonts/Geist-LightItalic.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -45,7 +45,7 @@
 /* Geist - Peso 400 (Regular) */
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-Regular.woff2') format('woff2');
+  src: url('/fonts/Geist-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@
 /* Geist - Peso 500 (Medium) */
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-Medium.woff2') format('woff2');
+  src: url('/fonts/Geist-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -62,7 +62,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-MediumItalic.woff2') format('woff2');
+  src: url('/fonts/Geist-MediumItalic.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -71,7 +71,7 @@
 /* Geist - Peso 700 (Bold) */
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-Bold.woff2') format('woff2');
+  src: url('/fonts/Geist-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -79,7 +79,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('src/fonts/Geist-BoldItalic.woff2') format('woff2');
+  src: url('/fonts/Geist-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -88,7 +88,7 @@
 /* Geist Mono - Peso 200 (Extra Light) */
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-ExtraLight.woff2') format('woff2');
+  src: url('/fonts/GeistMono-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -97,7 +97,7 @@
 
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-ExtraLightItalic.woff2') format('woff2');
+  src: url('/fonts/GeistMono-ExtraLightItalic.woff2') format('woff2');
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -106,7 +106,7 @@
 /* Geist Mono - Peso 300 (Light) */
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-Light.woff2') format('woff2');
+  src: url('/fonts/GeistMono-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -114,7 +114,7 @@
 
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-LightItalic.woff2') format('woff2');
+  src: url('/fonts/GeistMono-LightItalic.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -123,7 +123,7 @@
 /* Geist Mono - Peso 400 (Regular) */
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-Regular.woff2') format('woff2');
+  src: url('/fonts/GeistMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -132,7 +132,7 @@
 /* Geist Mono - Peso 500 (Medium) */
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-Medium.woff2') format('woff2');
+  src: url('/fonts/GeistMono-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -140,7 +140,7 @@
 
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-MediumItalic.woff2') format('woff2');
+  src: url('/fonts/GeistMono-MediumItalic.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -149,7 +149,7 @@
 /* Geist Mono - Peso 700 (Bold) */
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-Bold.woff2') format('woff2');
+  src: url('/fonts/GeistMono-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -157,7 +157,7 @@
 
 @font-face {
   font-family: 'Geist Mono';
-  src: url('src/fonts/GeistMono-BoldItalic.woff2') format('woff2');
+  src: url('/fonts/GeistMono-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -166,12 +166,12 @@
 /* ### Estilos del cursor y del scrollbar ### */
 /* Estilo visual del cursor */
 * {
-  cursor: url('src/assets/svg/cursor-default.svg') 0 0, auto;
+  cursor: url('/svg/cursor-default.svg') 0 0, auto;
 }
 
 /* Cursor para elementos de texto seleccionables */
 p, span, h1, h2, h3, h4, h5, h6, li, td, div, input, textarea {
-  cursor: url('src/assets/svg/cursor-text.svg') 0 0, auto;
+  cursor: url('/svg/cursor-text.svg') 0 0, auto;
 }
 
 /* Estilo visual de la selección */
@@ -191,12 +191,12 @@ span,
 span:hover,
 [role="button"],
 [role="button"]:hover {
-  cursor: url('src/assets/svg/cursor-pointer.svg') 0 0, auto;
+  cursor: url('/svg/cursor-pointer.svg') 0 0, auto;
 }
 
 #home > div > div.text-purple-400 > div > a:nth-child(1):hover,
 #home > div > div.text-purple-400 > div > a:nth-child(2):hover {
-  cursor: url('src/assets/svg/cursor-pointer-alt.svg') 0 0, auto;
+  cursor: url('/svg/cursor-pointer-alt.svg') 0 0, auto;
 }
 
 /* Scrollbar personalizada */
