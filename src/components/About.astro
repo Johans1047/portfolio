@@ -85,13 +85,13 @@ const shineText = t("about.title.line2");
 
         <div class="flex gap-4 pt-4">
           <a
-            href="#portfolio"
+            href={`/${lang}#portfolio`}
             class="px-6 py-3 bg-linear-to-r from-purple-700 to-pink-700 rounded-lg font-semibold hover:scale-105 transition-transform duration-300"
           >
             {t("about.button.work")}
           </a>
           <a
-            href="#contact"
+            href={`/${lang}#contact`}
             class="px-6 max-[415px]:pt-6 max-[415px]:pb-3 min-[416px]:py-3 border border-purple-500 rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
           >
             {t("about.button.contact")}
