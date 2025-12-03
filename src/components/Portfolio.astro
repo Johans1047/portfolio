@@ -8,6 +8,7 @@ import Testimonial from "./Portfolio/Testimonial.astro";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { projects } from "@i18n/projects";
 import { experiences } from "@i18n/experiences";
+import { certificates } from "@i18n/certificates";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -188,7 +189,17 @@ const shineText = t('portfolio.title.line2');
       <div id="certificates" class="tab-panel">
         <div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Certificate />
+            {
+              certificates.map((certificate) => (
+                <Certificate 
+                  title={t(`cert.${certificate.id}.name` as any)}
+                  institution={certificate.institution}
+                  issueDate={certificate.issueDate}
+                  credentialLink={certificate.credentialLink}
+                  icon={certificate.icon}
+                />
+              ))
+            }
           </div>
         </div>
       </div>

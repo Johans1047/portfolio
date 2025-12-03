@@ -120,6 +120,7 @@ export const ui = {
     'stack.tools': 'Tools & Others',
     
     // Certificates
+    'cert.agile.name': 'Agile Software Development',
     'cert.notspecified': 'Certification Not Specified',
     'cert.unknown': 'Unknown Institution',
     'cert.expedition': 'Expedition',
@@ -274,6 +275,7 @@ export const ui = {
     'stack.tools': 'Herramientas',
     
     // Certificados
+    'cert.agile.name': 'Desarrollo Ágil de Software',
     'cert.notspecified': 'Certificación No Especificada',
     'cert.unknown': 'Institución Desconocida',
     'cert.expedition': 'Expedición',
