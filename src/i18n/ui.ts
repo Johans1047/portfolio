@@ -20,6 +20,7 @@ export const ui = {
     'hero.cta.connect': "Let's connect and create something amazing together!",
     'hero.button.contact': 'Get in Touch',
     'hero.button.cv': 'Download CV',
+    'hero.button.cv.filepath': 'file/Curriculum-Vitae - English.pdf',
     'hero.image.alt': 'Illustration of app development process',
     
     // About Section
@@ -68,18 +69,49 @@ export const ui = {
     'portfolio.subtitle': 'Explore my work, skills, education, and recommendations',
     
     // Portfolio Tabs
+    'portfolio.tabs.experience': 'Experience',
     'portfolio.tabs.projects': 'Projects',
     'portfolio.tabs.stack': 'Stack',
     'portfolio.tabs.certificates': 'Certificates',
     'portfolio.tabs.education': 'Education',
     'portfolio.tabs.testimonials': 'Recommendations',
 
+    // Experience
+    'exp.tpm.role': "Software Developer (Freelance)",
+    'exp.tpm.institution': 'Tutorials PreMed',
+    'exp.tpm.date.start': 'July 2022',
+    'exp.tpm.date.end': 'Ongoing',
+    'exp.tpm.status.finished': 'finished',
+    'exp.tpm.status.finished.label': 'Finished',
+    'exp.tpm.status.ongoing': 'ongoing',
+    'exp.tpm.status.ongoing.label': 'Ongoing',
+
+    'exp.utp.role': "Junior Software Developer",
+    'exp.utp.institution': 'Technological University of Panama',
+    'exp.utp.date.start': 'July 2023',
+    'exp.utp.date.end': 'June 2025',
+    'exp.utp.status.finished': 'finished',
+    'exp.utp.status.finished.label': 'Finished',
+    'exp.utp.status.ongoing': 'ongoing',
+    'exp.utp.status.ongoing.label': 'Ongoing',
+
     // Projects
+    'project.3js.name': 'Interactive 3D Animation with ThreeJS',
+    'project.3js.description': 'A 3D scene built featuring dynamic lighting, and interactive elements.',
     'project.ecommerce.name': 'E-commerce Platform',
-    'project.ecommerce.description': 'A full-featured online store with payment integration',
+    'project.ecommerce.description': 'E-commerce platform built for the 2024 Reto Emprende challenge at UTP.',
+    'project.cedula.name': 'Panamanian ID Validator',
+    'project.cedula.description': 'A tool designed to validate and format Panamanian ID numbers.',
+    'project.portfolio.name': 'Professional Portfolio',
+    'project.portfolio.description': 'Personal website built with Astro and Tailwind featuring bilingual support.',
+    'project.taskify.name': 'To Do App',
+    'project.taskify.description': 'Task management app built with React, Tailwind, and DaisyUI.',
+    'project.todo.name': 'To Do App (Azure)',
+    'project.todo.description': 'A minimalist to-do list app deployed on Azure.',
     'project.demo': 'View Demo',
     'project.noname': 'Project Without Name',
     'project.nodesc': 'Project description unavailable.',
+    'project.nophoto': 'Picture unavailable.',
     
     // Stack
     'stack.frontend': 'Frontend',
@@ -102,7 +134,7 @@ export const ui = {
     'edu.status.finished': 'finished',
     'edu.status.finished.label': 'Finished',
     'edu.status.pending': 'pending',
-    'edu.status.pending.label': 'Pendiente',
+    'edu.status.pending.label': 'Pending',
     
     // Testimonials
     'test.name': 'Anonymous User',
@@ -142,6 +174,7 @@ export const ui = {
     'hero.cta.connect': '¡Conectemos y creemos algo increíble juntos!',
     'hero.button.contact': 'Contactar',
     'hero.button.cv': 'Descargar CV',
+    'hero.button.cv.filepath': 'file/Currículum-Vitae.pdf',
     'hero.image.alt': 'Ilustración del proceso de desarrollo de aplicaciones',
     
     // Sección Acerca de
@@ -190,19 +223,50 @@ export const ui = {
     'portfolio.subtitle': 'Explora mi trabajo, habilidades, educación y recomendaciones',
     
     // Pestañas del Portafolio
+    'portfolio.tabs.experience': 'Experiencia',
     'portfolio.tabs.projects': 'Proyectos',
     'portfolio.tabs.stack': 'Stack',
     'portfolio.tabs.certificates': 'Certificados',
     'portfolio.tabs.education': 'Educación',
     'portfolio.tabs.testimonials': 'Recomendaciones',
 
+    // Experiencia
+    'exp.tpm.role': "Desarrollador de Software (Freelance)",
+    'exp.tpm.institution': 'Tutorías PreMed',
+    'exp.tpm.date.start': 'Julio 2022',
+    'exp.tpm.date.end': 'En curso',
+    'exp.tpm.status.finished': 'finished',
+    'exp.tpm.status.finished.label': 'Finalizado',
+    'exp.tpm.status.ongoing': 'ongoing',
+    'exp.tpm.status.ongoing.label': 'En curso',
+
+    'exp.utp.role': "Desarrollador de Software Junior",
+    'exp.utp.institution': 'Universidad Tecnológica de Panamá',
+    'exp.utp.date.start': 'Julio 2023',
+    'exp.utp.date.end': 'Junio 2025',
+    'exp.utp.status.finished': 'finished',
+    'exp.utp.status.finished.label': 'Finalizado',
+    'exp.utp.status.ongoing': 'ongoing',
+    'exp.utp.status.ongoing.label': 'En curso',
+
     // Proyectos
+    'project.3js.name': 'Escena 3D Interactiva con ThreeJS',
+    'project.3js.description': 'Escena 3D que presenta iluminación dinámica y elementos interactivos',
     'project.ecommerce.name': 'Plataforma de E-commerce',
-    'project.ecommerce.description': 'Una tienda en línea completa con integración de pagos',
+    'project.ecommerce.description': 'Plataforma desarrollada para el Reto Emprende 2024 de la UTP.',
+    'project.cedula.name': 'Formateador de cédulas',
+    'project.cedula.description': 'Herramienta diseñada para validar y formatear cédulas panameñas.',
+    'project.portfolio.name': 'Portafolio Profesional',
+    'project.portfolio.description': 'Sitio web personal creado con Astro, Tailwind y soporte multilenguaje.',
+    'project.taskify.name': 'To Do App',
+    'project.taskify.description': 'Aplicación de tareas desarrollada con React, Tailwind y DaisyUI.',
+    'project.todo.name': 'To Do App (Azure)',
+    'project.todo.description': 'Lista de tareas minimalista desplegada en Azure.',
     'project.demo': 'Ver Demo',
     'project.noname': 'Proyecto Sin Nombre',
     'project.nodesc': 'Descripción del proyecto no disponible.',
-    
+    'project.nophoto': 'Foto no disponible.',
+
     // Stack
     'stack.frontend': 'Frontend',
     'stack.backend': 'Backend',
