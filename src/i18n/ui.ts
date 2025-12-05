@@ -121,6 +121,16 @@ export const ui = {
     
     // Certificates
     'cert.agile.name': 'Agile Software Development',
+    'cert.docker.name': 'Introduction to Docker for Continuous Application Deployment',
+    'cert.samsung.name': 'Python Programming and Artificial Intelligence',
+    'cert.udemy.name': 'Cibersecurity All in One',
+    'cert.banesco.name': 'Participation in the Banesco Innovation Challenge',
+    'cert.r.name': 'Introduction to the R Language and Environment for Data Analysis',
+    'cert.mlearning.name': 'Introduction to machine learning',
+    'cert.scrumstudy.name': 'Scrum Fundamentals Certified',
+    'cert.efset.name': 'EF SET English Certificate',
+    'cert.iestec.name': 'VIII INTERNATIONAL CONGRESS OF ENGINEERING, SCIENCE AND TECHNOLOGY',
+    'cert.iestec2.name': 'IX INTERNATIONAL CONGRESS OF ENGINEERING, SCIENCE AND TECHNOLOGY',
     'cert.notspecified': 'Certification Not Specified',
     'cert.unknown': 'Unknown Institution',
     'cert.expedition': 'Expedition',
@@ -276,6 +286,16 @@ export const ui = {
     
     // Certificados
     'cert.agile.name': 'Desarrollo Ágil de Software',
+    'cert.docker.name': 'Introducción a Docker para el despliegue continuo de Aplicaciones',
+    'cert.samsung.name': 'Programación en Python e Inteligencia Artifical',
+    'cert.udemy.name': 'Ciberseguridad Todo en Uno',
+    'cert.banesco.name': 'Participación en Reto Innova Banesco',
+    'cert.r.name': 'Introducción al Lenguaje y entorno R para el Análisis de Datos',
+    'cert.mlearning.name': 'Introducción a Machine Learning',
+    'cert.scrumstudy.name': 'Fundamentos de Scrum',
+    'cert.efset.name': 'Certificado de Inglés EF SET',
+    'cert.iestec.name': 'VIII CONGRESO INTERNACIONAL DE INGENIERÍA, CIENCIAS Y TECNOLOGÍA',
+    'cert.iestec2.name': 'IX CONGRESO INTERNACIONAL DE INGENIERÍA, CIENCIAS Y TECNOLOGÍA',
     'cert.notspecified': 'Certificación No Especificada',
     'cert.unknown': 'Institución Desconocida',
     'cert.expedition': 'Expedición',
